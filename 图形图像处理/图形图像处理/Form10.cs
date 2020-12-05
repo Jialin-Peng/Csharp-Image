@@ -20,7 +20,13 @@ namespace 图形图像处理
         private void Form10_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-            Bitmap bitmap = new Bitmap("D:\\桌面\\c#\\图形图像处理\\小姐姐1.jpg");
+            //获取到项目根目录
+            String path = Application.StartupPath;
+            path = path.Substring(0, path.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf('\\'));
+
+            Bitmap bitmap = new Bitmap(path+@"\小姐姐1.jpg");
             int width = 280;//图片的原宽
             int height = 200;//图片的原高
             Rectangle rectangle = new Rectangle(20, 20, width , height);

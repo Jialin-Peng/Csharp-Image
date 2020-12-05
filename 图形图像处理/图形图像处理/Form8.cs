@@ -21,7 +21,12 @@ namespace 图形图像处理
         private void Form8_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Image image = Image.FromFile(@"D:\桌面\c#\图形图像处理\小姐姐.jpg");
+            //获取到项目根目录
+            String path = Application.StartupPath;
+            path = path.Substring(0, path.LastIndexOf('\\'));//删除文件名
+            path = path.Substring(0, path.LastIndexOf('\\'));
+            path = path.Substring(0, path.LastIndexOf('\\'));
+            Image image = Image.FromFile(path+@"\小姐姐.jpg");
             Rectangle rectangle = new Rectangle(0, 0, Form8.ActiveForm.Width-17, Form8.ActiveForm.Height-40);
             TextureBrush textureBrush = new TextureBrush(image,rectangle);
             g.FillEllipse(textureBrush, rectangle);
